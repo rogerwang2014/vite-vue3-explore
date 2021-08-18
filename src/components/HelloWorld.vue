@@ -6,7 +6,7 @@
   <div class="navigator_bar">
     导航栏 |
     <button @click="$router.push('/login')">登录页</button> |
-    <button @click="$router.push('/home')">首页</button>
+    <button @click="toHome">首页</button>
   </div>
 </template>
 
@@ -20,6 +20,19 @@ export default {
     return {
       count: 0,
       name: 'Hi there~ please click the button'
+    }
+  },
+  methods: {
+    toHome () {
+      this.$router.push({
+        name: 'home',
+        query: {
+          id: '123'
+        },
+        function (to, from) {
+          console.log(to, from)
+        }
+      })
     }
   }
 }
