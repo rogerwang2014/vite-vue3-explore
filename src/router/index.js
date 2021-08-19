@@ -1,4 +1,6 @@
-import { createRouter, createWebHashHistory } from 'vue-router'
+import {createRouter, createWebHashHistory} from 'vue-router'
+import PagedJs from  '../components/PagedJs/index.vue'
+
 /**
  * 固定的导航数据
  * alwaysShow: true
@@ -6,10 +8,9 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 
 export const initialRouterData = [
     {
-      path: '/:pathMatch(.*)*',
-      component: () => import('../components/404.vue')
-    },
-    {
+        path: '/:pathMatch(.*)*',
+        component: () => import('../components/404.vue')
+    }, {
         path: '/',
         name: 'hello-world',
         hidden: false,
@@ -17,16 +18,13 @@ export const initialRouterData = [
         meta: {
             title: '登录'
         }
-    },
-    {
+    }, {
         path: '/page/a/:id',
         component: () => import('../components/A.vue'),
-    },
-    {
+    }, {
         path: '/page/b',
         component: () => import('../components/Home.vue'),
-    },
-    {
+    }, {
         path: '/login',
         name: 'login',
         hidden: true,
@@ -42,15 +40,18 @@ export const initialRouterData = [
         meta: {
             title: '首页'
         }
-    },
-    {
+    }, {
         path: '/multi-view',
         components: {
             default: () => import('../components/Login.vue'),
             a: () => import('../components/Home.vue'),
             b: () => import('../components/A.vue')
         },
-        props: { default: true, a: true, b: true }
+        props: {default: true, a: true, b: true}
+    }, {
+        path: '/paged-js',
+        name: 'paged-js',
+        component: PagedJs,
     }
 ]
 

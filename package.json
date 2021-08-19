@@ -11,6 +11,7 @@
   },
   "devDependencies": {
     "@vue/compiler-sfc": "^3.0.4",
+    "pagedjs": "^0.2.0",
     "vite": "^1.0.0-rc.13"
   }
 }
